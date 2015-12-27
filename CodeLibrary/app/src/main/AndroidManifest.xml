@@ -8,17 +8,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ClearEditTextTest">
-
+        <activity
+            android:name=".ActivityMain"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
-
             </intent-filter>
-
         </activity>
+
+        <activity
+            android:name=".ClearEditTextTest"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".PullToRefreshListActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 
