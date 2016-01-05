@@ -27,6 +27,18 @@
             android:name=".PullToRefreshListActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".DrawerLayoutTest"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
+
+        <activity
+            android:name=".MaterialDesignTest"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SwapRefreshTest"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

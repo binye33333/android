@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CodeShop</string>
+    <array name="planets_array">
+        <item>地球</item>
+        <item>火星</item>
+        <item>太阳</item>
+    </array>
+
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
 </resources>

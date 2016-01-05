@@ -19,20 +19,18 @@ import java.util.Arrays;
  */
 public class ActivityMain extends AppCompatActivity {
 
-    private ListView test_main_lv;
-    private String[] activity = {"EditTextWithClear", "PullListView"};
+    private String[] activity = {"EditTextWithClear", "PullListView", "DrawerLayout", "MaterialDesign","SwipeRefresh"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_act_main_layout);
-
         initView();
     }
 
 
     private void initView() {
-        test_main_lv = (ListView) findViewById(R.id.test_main_lv);
+        ListView test_main_lv = (ListView) findViewById(R.id.test_main_lv);
         InnerAdapter innerAdapter = new InnerAdapter(this);
         innerAdapter.setData(Arrays.asList(activity));
         test_main_lv.setAdapter(innerAdapter);
@@ -49,6 +47,16 @@ public class ActivityMain extends AppCompatActivity {
                     break;
                 case 1:
                     intent = new Intent(ActivityMain.this, PullToRefreshListActivity.class);
+                    break;
+                case 2:
+                    intent = new Intent(ActivityMain.this, DrawerLayoutTest.class);
+                    break;
+                case 3:
+                    intent = new Intent(ActivityMain.this, MaterialDesignTest.class);
+                    break;
+
+                case 4:
+                    intent = new Intent(ActivityMain.this, SwapRefreshTest.class);
                     break;
             }
             startActivity(intent);
