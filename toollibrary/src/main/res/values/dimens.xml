@@ -7,4 +7,6 @@
     <dimen name="header_footer_left_right_padding">24dp</dimen>
     <dimen name="header_footer_top_bottom_padding">12dp</dimen>
 
+    <dimen name="crop__bar_height">56dp</dimen>
+
 </resources>
