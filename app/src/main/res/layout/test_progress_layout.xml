@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.teach.yo.codeshop.view.CustomProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@android:color/darker_gray"
+        app:circleWidth="60dp"
+        app:firstColor="@android:color/black"
+        app:secondColor="@android:color/holo_orange_dark"
+        app:speed="10" />
+</LinearLayout>

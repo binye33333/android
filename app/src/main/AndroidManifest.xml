@@ -51,6 +51,10 @@
         <activity
             android:name=".CropActivityTest"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".CustomerProgressTest"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
