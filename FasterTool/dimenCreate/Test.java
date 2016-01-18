@@ -11,7 +11,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import javax.xml.parsers.ParserConfigurationException;
 
 /**
- * @author hz15051289
+ * @author chenyo
  * @Title: ${file_name}
  * @Package com.example.apptest.Test
  * @Description: 用于生成多套dimens配置文件

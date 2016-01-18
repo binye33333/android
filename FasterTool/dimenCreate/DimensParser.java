@@ -14,7 +14,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 /**
- * Created by hzins1501289 on 2016/1/12.
+ * Created by chenyo on 2016/1/12.
  * description：
  */
 public class DimensParser {

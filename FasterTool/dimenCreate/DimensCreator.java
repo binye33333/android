@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 /**
- * Created by hzins1501289 on 2016/1/14.
+ * Created by chenyo on 2016/1/14.
  * description：
  */
 public class DimensCreator {
