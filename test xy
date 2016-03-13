@@ -1,0 +1,99 @@
+warning: LF will be replaced by CRLF in .idea/compiler.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/encodings.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/gradle.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/runConfigurations.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/misc.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in .idea/modules.xml.
+The file will have its original line endings in your working directory.
+[1mdiff --git a/.idea/.name b/.idea/.name[m
+[1mindex a2568dd..1fd74d1 100644[m
+[1m--- a/.idea/.name[m
+[1m+++ b/.idea/.name[m
+[36m@@ -1 +1 @@[m
+[31m-CodeShop[m
+\ No newline at end of file[m
+[32m+[m[32mandroid[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/misc.xml b/.idea/misc.xml[m
+[1mindex 5d19981..de430bc 100644[m
+[1m--- a/.idea/misc.xml[m
+[1m+++ b/.idea/misc.xml[m
+[36m@@ -43,4 +43,20 @@[m
+   <component name="ProjectType">[m
+     <option name="id" value="Android" />[m
+   </component>[m
+[32m+[m[32m  <component name="masterDetails">[m
+[32m+[m[32m    <states>[m
+[32m+[m[32m      <state key="ProjectJDKs.UI">[m
+[32m+[m[32m        <settings>[m
+[32m+[m[32m          <last-edited>Android API 21 Platform</last-edited>[m
+[32m+[m[32m          <splitter-proportions>[m
+[32m+[m[32m            <option name="proportions">[m
+[32m+[m[32m              <list>[m
+[32m+[m[32m                <option value="0.2" />[m
+[32m+[m[32m              </list>[m
+[32m+[m[32m            </option>[m
+[32m+[m[32m          </splitter-proportions>[m
+[32m+[m[32m        </settings>[m
+[32m+[m[32m      </state>[m
+[32m+[m[32m    </states>[m
+[32m+[m[32m  </component>[m
+ </project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/modules.xml b/.idea/modules.xml[m
+[1mindex ce32b7f..c3741ec 100644[m
+[1m--- a/.idea/modules.xml[m
+[1m+++ b/.idea/modules.xml[m
+[36m@@ -2,7 +2,7 @@[m
+ <project version="4">[m
+   <component name="ProjectModuleManager">[m
+     <modules>[m
+[31m-      <module fileurl="file://$PROJECT_DIR$/Demo.iml" filepath="$PROJECT_DIR$/Demo.iml" />[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />[m
+       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />[m
+       <module fileurl="file://$PROJECT_DIR$/toollibrary/toollibrary.iml" filepath="$PROJECT_DIR$/toollibrary/toollibrary.iml" />[m
+     </modules>[m
+[1mdiff --git a/.idea/vcs.xml b/.idea/vcs.xml[m
+[1mindex 6564d52..94a25f7 100644[m
+[1m--- a/.idea/vcs.xml[m
+[1m+++ b/.idea/vcs.xml[m
+[36m@@ -1,6 +1,6 @@[m
+ <?xml version="1.0" encoding="UTF-8"?>[m
+ <project version="4">[m
+   <component name="VcsDirectoryMappings">[m
+[31m-    <mapping directory="" vcs="" />[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$" vcs="Git" />[m
+   </component>[m
+ </project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/build.gradle b/app/build.gradle[m
+[1mindex 6b93629..bc387cf 100644[m
+[1m--- a/app/build.gradle[m
+[1m+++ b/app/build.gradle[m
+[36m@@ -24,4 +24,5 @@[m [mdependencies {[m
+     testCompile 'junit:junit:4.12'[m
+     compile 'com.android.support:appcompat-v7:23.1.1'[m
+     compile project(':toollibrary')[m
+[32m+[m[32m    compile 'com.android.support:percent:22.2.0'[m
+ }[m
+[1mdiff --git a/app/src/main/java/com/teach/yo/codeshop/CropActivityTest.java b/app/src/main/java/com/teach/yo/codeshop/CropActivityTest.java[m
+[1mindex 8bb3500..1875367 100644[m
+[1m--- a/app/src/main/java/com/teach/yo/codeshop/CropActivityTest.java[m
+[1m+++ b/app/src/main/java/com/teach/yo/codeshop/CropActivityTest.java[m
+[36m@@ -51,7 +51,8 @@[m [mpublic class CropActivityTest extends Activity {[m
+ [m
+     private void beginCrop(Uri source) {[m
+         Uri destination = Uri.fromFile(new File(getCacheDir(), "cropped"));[m
+[31m-        Crop.of(source, destination).asSquare().start(this);[m
+[32m+[m[32m        Crop.of(source, destination).withAspect(2,1).start(this);[m
+[32m+[m[32m//        Crop.of(source, destination).asSquare().start(this);[m
+     }[m
+ [m
+     private void handleCrop(int resultCode, Intent result) {[m
+warning: LF will be replaced by CRLF in .idea/vcs.xml.
+The file will have its original line endings in your working directory.
