@@ -1,6 +1,5 @@
 package com.teach.yo.codeshop;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +20,7 @@ import java.util.Arrays;
 public class ActivityMain extends AppCompatActivity {
 
     private String[] activity = {"EditTextWithClear", "PullListView", "DrawerLayout", "MaterialDesign", "SwipeRefresh", "CropTest", "CustomerProgressTest",
-            "autoLayout","ObjectAnimTest"};
+            "autoLayout","ObjectAnimTest","MultAdapterTest"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +71,9 @@ public class ActivityMain extends AppCompatActivity {
                     break;
                 case 8:
                     intent = new Intent(ActivityMain.this, ObjectAnimTest.class);
+                    break;
+                case 9:
+                    intent = new Intent(ActivityMain.this, MultAdapterTest.class);
                     break;
             }
             startActivity(intent);

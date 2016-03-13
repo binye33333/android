@@ -63,6 +63,10 @@
         <activity
             android:name=".ObjectAnimTest"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".MultAdapterTest"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
