@@ -45,11 +45,10 @@ public class HtmlTest extends Activity {
         HtmlUtil.showHtml(textView, htmlContent, new SpanClickListener() {
             @Override
             public void onClick(int type, String url) {
-
                 if (type == LinkMovementMethodExt.CLICKABLE_SPAN_IMAGE) {
                     Toast.makeText(HtmlTest.this, "click image:" + url, Toast.LENGTH_SHORT).show();
                 } else if (type == LinkMovementMethodExt.CLICKABLE_SPAN_URL) {
-                    Toast.makeText(HtmlTest.this, "click image:" + url, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HtmlTest.this, "click url:" + url, Toast.LENGTH_SHORT).show();
                 }
             }
         });
