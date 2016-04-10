@@ -37,21 +37,28 @@ public class LinkMovementMethodExt extends LinkMovementMethod {
     @Override
     public boolean onTouchEvent(TextView widget, Spannable buffer,
                                 MotionEvent event) {
+
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             x1 = (int) event.getX();
             y1 = (int) event.getY();
         }
+
         if (event.getAction() == MotionEvent.ACTION_UP) {
             x2 = (int) event.getX();
             y2 = (int) event.getY();
+
             if (Math.abs(x1 - x2) < 10 && Math.abs(y1 - y2) < 10) {
+
                 x2 -= widget.getTotalPaddingLeft();
                 y2 -= widget.getTotalPaddingTop();
+
                 x2 += widget.getScrollX();
                 y2 += widget.getScrollY();
+
                 Layout layout = widget.getLayout();
                 int line = layout.getLineForVertical(y2);
                 int off = layout.getOffsetForHorizontal(line, x2);
+
                 ImageSpan[] imageSpans = buffer.getSpans(off, off, ImageSpan.class);
                 if (imageSpans.length != 0) {
                     Selection.setSelection(buffer,
@@ -62,6 +69,7 @@ public class LinkMovementMethodExt extends LinkMovementMethod {
                     }
                     return true;
                 }
+
                 URLSpan[] urlSpans = buffer.getSpans(off, off, URLSpan.class);
                 if (urlSpans.length != 0) {
                     Selection.setSelection(buffer,
