@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.teach.yo.codeshop.htmlParser.HtmlTest;
 import com.teach.yo.toollibrary.adapter.TeaAdapter;
 import com.teach.yo.toollibrary.adapter.TeaViewHolder;
 
@@ -20,7 +21,7 @@ import java.util.Arrays;
 public class ActivityMain extends AppCompatActivity {
 
     private String[] activity = {"EditTextWithClear", "PullListView", "DrawerLayout", "MaterialDesign", "SwipeRefresh", "CropTest", "CustomerProgressTest",
-            "autoLayout","ObjectAnimTest","MultAdapterTest"};
+            "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,9 @@ public class ActivityMain extends AppCompatActivity {
                     break;
                 case 9:
                     intent = new Intent(ActivityMain.this, MultAdapterTest.class);
+                    break;
+                case 10:
+                    intent = new Intent(ActivityMain.this, HtmlTest.class);
                     break;
             }
             startActivity(intent);

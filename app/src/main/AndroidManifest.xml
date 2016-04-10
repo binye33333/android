@@ -3,6 +3,7 @@
 
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
@@ -10,6 +11,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name=".app.TeaApplication"
         android:theme="@style/AppTheme">
 
         <activity
@@ -66,6 +68,9 @@
 
         <activity
             android:name=".MultAdapterTest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".htmlParser.HtmlTest"
             android:screenOrientation="portrait" />
     </application>
 
