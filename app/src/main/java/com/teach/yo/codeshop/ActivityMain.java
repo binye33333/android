@@ -21,7 +21,7 @@ import java.util.Arrays;
 public class ActivityMain extends AppCompatActivity {
 
     private String[] activity = {"EditTextWithClear", "PullListView", "DrawerLayout", "MaterialDesign", "SwipeRefresh", "CropTest", "CustomerProgressTest",
-            "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest"};
+            "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest","ToolbarTest","progressAnim","BannerTabTest"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +78,15 @@ public class ActivityMain extends AppCompatActivity {
                     break;
                 case 10:
                     intent = new Intent(ActivityMain.this, HtmlTest.class);
+                    break;
+                case 11:
+                    intent = new Intent(ActivityMain.this, ToolBarTest.class);
+                    break;
+                case 12:
+                    intent = new Intent(ActivityMain.this, ProgressBarTest.class);
+                    break;
+                case 13:
+                    intent = new Intent(ActivityMain.this, BannerTabTest.class);
                     break;
             }
             startActivity(intent);

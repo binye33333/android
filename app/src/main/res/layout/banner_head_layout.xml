@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager>
+
+    <com.teach.yo.toollibrary.view.banner.PagerSlidingTabStrip
+        android:id="@+id/sliding"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"></com.teach.yo.toollibrary.view.banner.PagerSlidingTabStrip>
+</LinearLayout>

@@ -1,19 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.teach.yo.codeshop">
 
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".app.TeaApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".app.TeaApplication"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ActivityMain"
             android:screenOrientation="portrait">
@@ -24,54 +22,51 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ClearEditTextTest"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".PullToRefreshListActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".DrawerLayoutTest"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
-
         <activity
             android:name=".MaterialDesignTest"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".SwapRefreshTest"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.teach.yo.toollibrary.view.crop.CropImageActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".CropActivityTest"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".CustomerProgressTest"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".AutoLayoutTest"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".ObjectAnimTest"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".MultAdapterTest"
             android:screenOrientation="portrait" />
         <activity
             android:name=".htmlParser.HtmlTest"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ToolBarTest"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ProgressBarTest"
+            android:screenOrientation="portrait" />
+        <activity android:name=".BannerTabTest"></activity>
     </application>
 
 </manifest>

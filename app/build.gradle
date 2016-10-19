@@ -25,4 +25,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':toollibrary')
     compile 'com.android.support:percent:22.2.0'
+    compile('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
+        exclude module: 'support-v4'
+    }
+    compile 'com.android.support:support-v4:24.1.1'
 }
