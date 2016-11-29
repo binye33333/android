@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.teach.yo.codeshop.htmlParser.HtmlTest;
+import com.teach.yo.codeshop.viewpager.ViewPagerDemo;
 import com.teach.yo.toollibrary.adapter.TeaAdapter;
 import com.teach.yo.toollibrary.adapter.TeaViewHolder;
 
@@ -21,7 +22,7 @@ import java.util.Arrays;
 public class ActivityMain extends AppCompatActivity {
 
     private String[] activity = {"EditTextWithClear", "PullListView", "DrawerLayout", "MaterialDesign", "SwipeRefresh", "CropTest", "CustomerProgressTest",
-            "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest","ToolbarTest","progressAnim","BannerTabTest"};
+            "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest","ToolbarTest","progressAnim","BannerTabTest","ViewPagerDemo"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +88,9 @@ public class ActivityMain extends AppCompatActivity {
                     break;
                 case 13:
                     intent = new Intent(ActivityMain.this, BannerTabTest.class);
+                    break;
+                case 14:
+                    intent = new Intent(ActivityMain.this, ViewPagerDemo.class);
                     break;
             }
             startActivity(intent);

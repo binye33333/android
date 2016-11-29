@@ -64,6 +64,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
+            android:name=".viewpager.ViewPagerDemo"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".ProgressBarTest"
             android:screenOrientation="portrait" />
         <activity android:name=".BannerTabTest"></activity>
