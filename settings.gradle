@@ -1,1 +1,1 @@
-include ':app', ':toollibrary'
+include ':app', ':toollibrary', ':plugin'

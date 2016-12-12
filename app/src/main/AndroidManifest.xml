@@ -66,11 +66,15 @@
         <activity
             android:name=".viewpager.ViewPagerDemo"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
         <activity
             android:name=".ProgressBarTest"
             android:screenOrientation="portrait" />
         <activity android:name=".BannerTabTest"></activity>
+
+        <activity
+            android:name=".FragmentDataRefresh"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

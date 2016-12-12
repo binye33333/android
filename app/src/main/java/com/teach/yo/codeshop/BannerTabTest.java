@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -30,9 +31,9 @@ public class BannerTabTest extends AppCompatActivity {
 
     public static View bannerLayout;
     public static FrameLayout bannerContainer;
-    List<ListFragment> list = new ArrayList<>() ;
+    List<ListFragment> list = new ArrayList<>();
+    public static Fragment currentFragment;
 
-    int position = 0 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,6 @@ public class BannerTabTest extends AppCompatActivity {
         setContentView(R.layout.activity_banner_tab_test);
 
         fragmentViewPager = (ViewPager) findViewById(R.id.viewPager);
-        fragmentViewPager.setOffscreenPageLimit(4);
-
         bannerLayout = LayoutInflater.from(this).inflate(R.layout.banner_head_layout, null);
         pagerSlidingTabStrip = (PagerSlidingTabStrip) bannerLayout.findViewById(R.id.sliding);
         banner = (AutoScrollViewPager) bannerLayout.findViewById(R.id.banner);
@@ -56,26 +55,26 @@ public class BannerTabTest extends AppCompatActivity {
         fragmentViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                ViewGroup parent = (ViewGroup) BannerTabTest.bannerLayout.getParent();
+                if (parent != null) {
+                    BannerTabTest.banner.stopAutoScroll();
+                    parent.removeView(BannerTabTest.bannerLayout);
+                }
+                BannerTabTest.bannerContainer.setVisibility(View.VISIBLE);
+                BannerTabTest.bannerContainer.addView(BannerTabTest.bannerLayout);
+                BannerTabTest.banner.startAutoScroll();
+
             }
 
             @Override
             public void onPageSelected(int position) {
-                list.get(position).setUserVisibleHint(true);
+                if (list.size() != 0) {
+                    currentFragment = list.get(position);
+                }
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-                if(state==ViewPager.SCROLL_STATE_IDLE){
-                }else {
-                    ViewGroup parent = (ViewGroup) bannerLayout.getParent();
-                    if(parent!=null){
-                        banner.stopAutoScroll();
-                        parent.removeView(bannerLayout);
-                    }
-                    BannerTabTest.bannerContainer.setVisibility(View.VISIBLE);
-                    bannerContainer.addView(bannerLayout);
-                    banner.startAutoScroll();
-                }
 
             }
         });
@@ -98,7 +97,7 @@ public class BannerTabTest extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return Integer.MAX_VALUE;
+            return list.size();
         }
 
         @Override
@@ -108,8 +107,6 @@ public class BannerTabTest extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-
-            position = position%4;
             View view = LayoutInflater.from(BannerTabTest.this).inflate(R.layout.banner_item_layout, container, false);
             if (position == 0) {
                 view.setBackgroundColor(Color.BLACK);
@@ -127,25 +124,21 @@ public class BannerTabTest extends AppCompatActivity {
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView(list.get(position));
+            container.removeView((View) object);
         }
     }
 
 
-    class Adapter extends FragmentPagerAdapter {
+    class Adapter extends FragmentStatePagerAdapter {
 
 
         public Adapter(FragmentManager fm) {
             super(fm);
-            list.add(new ListFragment());
-            list.add(new ListFragment());
-            list.add(new ListFragment());
-            list.add(new ListFragment());
         }
 
         @Override
         public Fragment getItem(int position) {
-            return list.get(position);
+            return new ListFragment();
         }
 
         @Override

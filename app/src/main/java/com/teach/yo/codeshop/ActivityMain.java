@@ -22,7 +22,9 @@ import java.util.Arrays;
 public class ActivityMain extends AppCompatActivity {
 
     private String[] activity = {"EditTextWithClear", "PullListView", "DrawerLayout", "MaterialDesign", "SwipeRefresh", "CropTest", "CustomerProgressTest",
-            "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest","ToolbarTest","progressAnim","BannerTabTest","ViewPagerDemo"};
+            "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest", "ToolbarTest", "progressAnim", "BannerTabTest", "ViewPagerDemo"
+            , "FragmentPagerReFresh"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +59,9 @@ public class ActivityMain extends AppCompatActivity {
                 case 3:
                     intent = new Intent(ActivityMain.this, MaterialDesignTest.class);
                     break;
-
                 case 4:
                     intent = new Intent(ActivityMain.this, SwapRefreshTest.class);
                     break;
-
                 case 5:
                     intent = new Intent(ActivityMain.this, CropActivityTest.class);
                     break;
@@ -92,43 +92,47 @@ public class ActivityMain extends AppCompatActivity {
                 case 14:
                     intent = new Intent(ActivityMain.this, ViewPagerDemo.class);
                     break;
+                case 15:
+                    intent = new Intent(ActivityMain.this, FragmentDataRefresh.class);
+                    break;
             }
             startActivity(intent);
         }
     };
-
-
-    class InnerAdapter extends TeaAdapter<String> {
-
-
-        public InnerAdapter(Context context) {
-            super(context);
-        }
-
-        @Override
-        protected int getItemLayoutId() {
-            return R.layout.textview_layout;
-        }
-
-        @Override
-        protected TeaViewHolder<String> getViewHolder() {
-            return new InnerHolder();
-        }
-    }
-
-    class InnerHolder extends TeaViewHolder<String> {
-
-        TextView textView;
-
-        @Override
-        public void init(View view) {
-            textView = (TextView) view.findViewById(R.id.textView);
-        }
-
-        @Override
-        public void setItemData(String data, int position) {
-            textView.setText(data);
-        }
-    }
-
 }
+
+
+class InnerAdapter extends TeaAdapter<String> {
+
+
+    public InnerAdapter(Context context) {
+        super(context);
+    }
+
+    @Override
+    protected int getItemLayoutId() {
+        return R.layout.textview_layout;
+    }
+
+    @Override
+    protected TeaViewHolder<String> getViewHolder() {
+        return new InnerHolder();
+    }
+}
+
+class InnerHolder extends TeaViewHolder<String> {
+
+    TextView textView;
+
+    @Override
+    public void init(View view) {
+        textView = (TextView) view.findViewById(R.id.textView);
+    }
+
+    @Override
+    public void setItemData(String data, int position) {
+        textView.setText(data);
+    }
+}
+
+

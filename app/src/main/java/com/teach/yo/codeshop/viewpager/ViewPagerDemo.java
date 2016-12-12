@@ -4,14 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.teach.yo.codeshop.R;
+import com.teach.yo.toollibrary.view.banner.PagerSlidingTabStrip;
 
 /**
  * Created by chenyoyo
@@ -20,16 +19,17 @@ import com.teach.yo.codeshop.R;
 
 public class ViewPagerDemo extends Activity {
 
-    private ViewPager mViewPager;
-    private String[] title = {"page0", "page1", "page2"};
+    private String[] title = {"page0", "page1", "page2", "page3", "page4", "page5"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewpager_demo_layout);
 
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.viewPager);
         mViewPager.setAdapter(new InnerPagerAdapter(this));
+        PagerSlidingTabStrip pagerTabStrip = (PagerSlidingTabStrip) findViewById(R.id.PagerTabStrip);
+        pagerTabStrip.setViewPager(mViewPager);
     }
 
 
@@ -37,7 +37,7 @@ public class ViewPagerDemo extends Activity {
 
         private Context mContext;
 
-        public InnerPagerAdapter(Context context) {
+        InnerPagerAdapter(Context context) {
             mContext = context;
         }
 
@@ -58,10 +58,8 @@ public class ViewPagerDemo extends Activity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.item_pager_layout, container,false);
+            View view = LayoutInflater.from(mContext).inflate(R.layout.item_pager_layout, container, false);
             container.addView(view);
-            TextView textView = (TextView) view.findViewById(R.id.textView);
-            textView.setText(String.format("第%d页", position));
             return view;
         }
 
