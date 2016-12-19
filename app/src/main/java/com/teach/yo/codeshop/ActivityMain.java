@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.teach.yo.codeshop.htmlParser.HtmlTest;
+import com.teach.yo.codeshop.recycleView.RecycleViewActivity;
 import com.teach.yo.codeshop.viewpager.ViewPagerDemo;
 import com.teach.yo.toollibrary.adapter.TeaAdapter;
 import com.teach.yo.toollibrary.adapter.TeaViewHolder;
@@ -23,7 +24,7 @@ public class ActivityMain extends AppCompatActivity {
 
     private String[] activity = {"EditTextWithClear", "PullListView", "DrawerLayout", "MaterialDesign", "SwipeRefresh", "CropTest", "CustomerProgressTest",
             "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest", "ToolbarTest", "progressAnim", "BannerTabTest", "ViewPagerDemo"
-            , "FragmentPagerReFresh"
+            , "FragmentPagerReFresh", "RecycleViewActivity"
     };
 
     @Override
@@ -94,6 +95,9 @@ public class ActivityMain extends AppCompatActivity {
                     break;
                 case 15:
                     intent = new Intent(ActivityMain.this, FragmentDataRefresh.class);
+                    break;
+                case 16:
+                    intent = new Intent(ActivityMain.this, RecycleViewActivity.class);
                     break;
             }
             startActivity(intent);

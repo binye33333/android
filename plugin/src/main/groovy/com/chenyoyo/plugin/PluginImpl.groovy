@@ -1,13 +1,16 @@
 package com.chenyoyo.plugin
 
+import com.chenyoyo.adaption.AdaptionExecutor
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
 public class PluginImpl implements Plugin<Project> {
     @Override
     void apply(Project project) {
-        project.task('testTask') << {
-            println "Hello gradle plugin"
+       String path = project.path ;
+        System.out.println("project path:"+path) ;
+        project.task('execute') << {
+            AdaptionExecutor.execute(path.replace(":","")) ;
         }
     }
 }

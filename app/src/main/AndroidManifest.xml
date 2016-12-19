@@ -75,6 +75,10 @@
         <activity
             android:name=".FragmentDataRefresh"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".recycleView.RecycleViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
