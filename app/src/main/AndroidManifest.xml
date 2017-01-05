@@ -79,6 +79,10 @@
         <activity
             android:name=".recycleView.RecycleViewActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ScrollLayoutTest"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

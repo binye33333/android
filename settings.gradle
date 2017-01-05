@@ -1,1 +1,1 @@
-include ':app', ':toollibrary', ':plugin', ':javatest'
+include ':app', ':toollibrary', ':plugin', ':javatest', ':graceapp'
