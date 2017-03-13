@@ -27,7 +27,7 @@ public class AdaptionExecutor {
         createBase(path);
 
         createAll(path);
-
+//
     }
 
     /**
@@ -44,7 +44,7 @@ public class AdaptionExecutor {
      */
     public static void createBase(String path) {
         File resFile = new File(path + "/src/main/res");
-        DimensCreator.createBaseFile(resFile.getAbsolutePath(), 800);
+        DimensCreator.createBaseFile(resFile.getAbsolutePath(), 360);
     }
 
     /**
@@ -56,7 +56,7 @@ public class AdaptionExecutor {
 
             File resFile = new File(path + "/src/main/res");
 
-            List<DimenValues> list1 = parser.parse(new FileInputStream(resFile.getAbsolutePath() + "/values-2208x1242/dimens.xml"));
+            List<DimenValues> list1 = parser.parse(new FileInputStream(resFile.getAbsolutePath() + "/values-sw360dp/dimens.xml"));
             DimensCreator creator = new DimensCreator(resFile.getAbsolutePath(), list1);
             creator.createAll();
         } catch (ParserConfigurationException e) {

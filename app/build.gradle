@@ -3,7 +3,7 @@ apply plugin: 'com.chenyoyo.plugin'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.teach.yo.codeshop"

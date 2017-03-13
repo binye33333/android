@@ -24,7 +24,7 @@ public class ActivityMain extends AppCompatActivity {
 
     private String[] activity = {"EditTextWithClear", "PullListView", "DrawerLayout", "MaterialDesign", "SwipeRefresh", "CropTest", "CustomerProgressTest",
             "autoLayout", "ObjectAnimTest", "MultAdapterTest", "HtmlTest", "ToolbarTest", "progressAnim", "BannerTabTest", "ViewPagerDemo"
-            , "FragmentPagerReFresh", "RecycleViewActivity", "ScrollLayoutTest"
+            , "FragmentPagerReFresh", "RecycleViewActivity", "ScrollLayoutTest", "OkhttpTest"
     };
 
     @Override
@@ -101,6 +101,9 @@ public class ActivityMain extends AppCompatActivity {
                     break;
                 case 17:
                     intent = new Intent(ActivityMain.this, ScrollLayoutTest.class);
+                    break;
+                case 18:
+                    intent = new Intent(ActivityMain.this, OkHttpTest.class);
                     break;
             }
             startActivity(intent);

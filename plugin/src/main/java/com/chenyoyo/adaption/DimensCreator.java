@@ -16,14 +16,14 @@ public class DimensCreator {
     private static final String xmlHeader = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
             "<resources>";
     private static final String xmlFooter = "</resources>";
-    private final String DIRTEMPLATE = "values-w%sdp";
+    private final String DIRTEMPLATE = "values-sw%sdp";
     private final String dimenTemplate = "<dimen name=\"%s\">%sdp</dimen>";
     private final String DIRPath;
 
 
     public static void createBaseFile(String path, int size) {
-        String dimenTemplate = "<dimen name=\"plus_px_%s\">%s</dimen>";
-        File dir = new File(path + "/values-2208x1242");
+        String dimenTemplate = "<dimen name=\"size_%s_dp\">%s</dimen>";
+        File dir = new File(path + "/values-sw360dp");
         if (!dir.exists()) {
             dir.mkdirs();
         }
@@ -35,7 +35,7 @@ public class DimensCreator {
 
         String data = xmlHeader + "\n";
         for (int i = 1; i < size + 1; i++) {
-            String itemData = String.format(dimenTemplate, String.valueOf(i), i + "px") + "\n";
+            String itemData = String.format(dimenTemplate, String.valueOf(i), i + "dp") + "\n";
             data += itemData;
         }
         data += xmlFooter;
@@ -102,10 +102,10 @@ public class DimensCreator {
         String data = xmlHeader + "\n";
         for (DimenValues values : list) {
             String itemValue = values.value;
-            if (values.value.contains("px")) {
-                float v = Float.parseFloat(values.value.replace("px", "").trim());
+            if (values.value.contains("dp")) {
+                float v = Float.parseFloat(values.value.replace("dp", "").trim());
                 // 1242 的图  要先除以 1.15 换算到 1080px 图后做运算,除以3 转成 dp ，然后用dp 做单位
-                itemValue = formatDimen(v / 1.15 / 3 * scale);
+                itemValue = formatDimen(v * scale);
             }
             String itemData = String.format(dimenTemplate, values.name, itemValue) + "\n";
             data += itemData;

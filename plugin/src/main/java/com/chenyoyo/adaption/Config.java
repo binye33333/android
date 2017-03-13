@@ -6,7 +6,7 @@ package com.chenyoyo.adaption;
  */
 public class Config {
     //需要适配的设备配置
-    public final static int[] supportDevices = {240, 270, 320, 360, 400};
+    public final static int[] supportDevices = {320, 360};
 
     //dimens.xml 计算基础 360dp
     public final static int defaultValue = 360;
