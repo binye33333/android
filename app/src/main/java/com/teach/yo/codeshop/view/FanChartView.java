@@ -25,6 +25,7 @@ public class FanChartView extends View {
     //画扇形图的正方形，内切圆
     private RectF mRectF;
 
+    //当前画到第几块了
     private int currentItemIndex = 0;
     //扇形圆的直径 占用的正方形宽度比例
     double ratio = 1.0 / 2;
@@ -42,8 +43,12 @@ public class FanChartView extends View {
     }
 
 
+    /**
+     * 设置数据列表
+     *
+     * @param list 数据集合
+     */
     public void setData(List<ChartBean> list) {
-
         mList = list;
         if (mList == null) {
             return;
@@ -77,6 +82,7 @@ public class FanChartView extends View {
         for (int i = 0; i < currentItemIndex; i++) {
             ChartBean bean = mList.get(i);
             mPaint.reset();
+
             mPaint.setStyle(Paint.Style.FILL);
             mPaint.setAntiAlias(true);
             mPaint.setColor(bean.color);
@@ -87,23 +93,26 @@ public class FanChartView extends View {
 
             //画从圆心伸出去的直线
             double θ = angle + increase / 2;
-            double lineX = (mRectF.width() / 2 + 20) * Math.cos(θ * Math.PI / 180);
-            double lineY = (mRectF.width() / 2 + 20) * Math.sin(θ * Math.PI / 180);
+            //圆形的半径+20px  三角函数算终点坐标
+            float endX = (float) ((mRectF.width() / 2 + 20) * Math.cos(θ * Math.PI / 180) + mRectF.centerX());
+            float endY = (float) ((mRectF.width() / 2 + 20) * Math.sin(θ * Math.PI / 180) + mRectF.centerY());
             mPaint.setStrokeWidth(1);
-            canvas.drawLine(mRectF.centerX(), mRectF.centerY(), mRectF.centerX() + (float) lineX, mRectF.centerY() + (float) lineY, mPaint);
+            //起点为圆心 终点为三角函数算出来的长度向量+圆形坐标
+            canvas.drawLine(mRectF.centerX(), mRectF.centerY(), endX, endY, mPaint);
 
-
+            //测量文字宽度
             mPaint.setTextSize(20);
             String text = bean.name + "比例：" + bean.number * 100 / all + "%";
             float textLength = mPaint.measureText(text);
 
-            //画横着的那根直线
-            canvas.drawLine(mRectF.centerX() + (float) lineX, mRectF.centerY() + (float) lineY, mRectF.centerX() + (float) lineX + (float) (lineX / Math.abs(lineX)) * textLength, mRectF.centerY() + (float) lineY, mPaint);
+            int plusOr = Math.cos(θ * Math.PI / 180) > 0 ? 1 : -1;
+            //画横着的那根直线  endX / Math.abs(endX) 表示向左画还是向右画
+            canvas.drawLine(endX, endY, endX + plusOr * textLength, endY, mPaint);
 
             //左边的时候，减去文字长度，开始画，右边的时候就从坐标开始位置画
-            int leftRightX = lineX > 0 ? 0 : -1;
+            int leftRightX = Math.cos(θ * Math.PI / 180) > 0 ? 0 : -1;
             //画文字
-            canvas.drawText(text, mRectF.centerX() + (float) lineX + (float) leftRightX * textLength, mRectF.centerY() + (float) lineY, mPaint);
+            canvas.drawText(text, endX + (float) leftRightX * textLength, endY, mPaint);
 
             angle += increase;
         }
