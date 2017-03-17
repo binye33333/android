@@ -85,6 +85,7 @@ public class OkHttpTest extends Activity {
             //把client 的证书，服务端的证书放到ssl上下文中，适用于证书锁定，指定证书的方式
             sslContext.init(null, trustManagerFactory.getTrustManagers(), new SecureRandom());
 
+            //证书锁定的使用方式
             String hostname = "kyfw.12306.cn";
             CertificatePinner certificatePinner = new CertificatePinner.Builder()
                     .add(hostname, "sha256/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=")

@@ -85,6 +85,8 @@
             android:screenOrientation="portrait" />
 
         <activity android:name=".OkHttpTest" />
+
+        <activity android:name=".ChartViewTest" />
     </application>
 
 </manifest>
