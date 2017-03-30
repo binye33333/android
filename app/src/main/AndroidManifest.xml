@@ -87,6 +87,8 @@
         <activity android:name=".OkHttpTest" />
 
         <activity android:name=".ChartViewTest" />
+
+        <activity android:name=".LuckPanTest" />
     </application>
 
 </manifest>

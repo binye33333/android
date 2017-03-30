@@ -83,13 +83,14 @@ public class FanChartView extends View {
             ChartBean bean = mList.get(i);
             mPaint.reset();
 
-            mPaint.setStyle(Paint.Style.FILL);
+            mPaint.setStyle(Paint.Style.STROKE);
             mPaint.setAntiAlias(true);
             mPaint.setColor(bean.color);
+            mPaint.setStrokeWidth(30);
 
             //画扇形
             double increase = (double) bean.number / all * 360;
-            canvas.drawArc(mRectF, (float) angle, (float) increase, true, mPaint);
+            canvas.drawArc(mRectF, (float) angle, (float) increase, false, mPaint);
 
             //画从圆心伸出去的直线
             double θ = angle + increase / 2;
